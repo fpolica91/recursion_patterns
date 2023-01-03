@@ -10,5 +10,8 @@ void helper(vector<int> &nums, int index, int target, int sum,
 vector<vector<int>> subSets(vector<int> &nums, int target);
 bool subSet(vector<int> &nums, int target);
 bool helper(vector<int> &nums, int index, int target, int &sum);
+void solve(vector<int>& candidates, int index,  int target);
+vector<vector<int>> combinationSum(vector<int>& candidates, int target);
+
 
 #endif

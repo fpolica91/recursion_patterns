@@ -20,7 +20,11 @@ int main() {
 
   cout << "does subset with sum exist: \n";
   cout << subSet(nums, 2) <<
-  endl;
+  endl
+  << endl;
+
+  vector<int> digits = {2,3,6,7};
+  combinationSum(digits, 7);
 
   
 }
