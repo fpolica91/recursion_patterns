@@ -14,4 +14,13 @@ int main() {
     }
     cout << endl;
   }
+
+  cout << endl
+  << endl;
+
+  cout << "does subset with sum exist: \n";
+  cout << subSet(nums, 2) <<
+  endl;
+
+  
 }
