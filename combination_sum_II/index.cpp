@@ -1,10 +1,9 @@
 #include "../main.h"
-vector<vector<int>> ans;
-vector<int> current;
 
-void process(vector<int>& nums,int index ,int target){
+
+void processSum2(vector<int>& nums,int index ,int target, vector<vector<int>> &res, vector<int> &current){
     if(target == 0)
-        ans.push_back(current);
+        res.push_back(current);
     
     for(int i = index; i < nums.size(); i ++){
         if(i > index and nums[i] == nums[i-1])
@@ -12,7 +11,7 @@ void process(vector<int>& nums,int index ,int target){
         if(nums[i] > target)
             break;
         current.push_back(nums[i]);
-        process(nums, i + 1, target-nums[i]);
+        processSum2(nums, i + 1, target-nums[i], res, current);
         current.pop_back();
     }
         
@@ -21,6 +20,8 @@ void process(vector<int>& nums,int index ,int target){
 
 vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
     sort(candidates.begin(), candidates.end());
-    process(candidates, 0, target);
-    return ans;
+    vector<int> curr;
+    vector<vector<int>> res;
+    processSum2(candidates, 0, target, res, curr);
+    return res;
 }
